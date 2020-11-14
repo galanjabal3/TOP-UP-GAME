@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ Hal2 }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+<style>
+    body{
+        background-image: url('https://wallpaperboat.com/wp-content/uploads/2019/06/plain-black-09.jpg') ;
+        background-position-x: center;
+        background-size: cover;
+    }
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">TOP UP</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/user">Log Out</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+     <div class="container">
+         <div class="row text-center">
+            <div class="col-sm"><br><br><br><br>
+    <img src="https://play-lh.googleusercontent.com/JRd05pyBH41qjgsJuWduRJpDeZG0Hnb0yjf2nWqO7VaGKL10-G5UIygxED-WNOc3pg=s180-rw" class="rounded float-left" alt="...">
+    <img src="https://play-lh.googleusercontent.com/iuTt8Y9wzC3YCWgMGp_JcswmXGyG_t6XHDyPDv6ZLlGZQbEbeuLmSbZGD2DHwUB3ZAvY=s180-rw" class="rounded float-center" alt="...">
+    <img src="https://play-lh.googleusercontent.com/fWHttLzZ31XN5DKV8MK7rHOl9EBlZwtyP8p6NYL-bTzfo7vVJO66n03e_w5Y321UOZlz=s180-rw" class="rounded float-right" alt="...">  <br><br>       
+    <img src="https://play-lh.googleusercontent.com/yUXGc8RlKFtUNQ2Vz3r5eJyf-Vje4A8dU3m8BxdzoTHIoUPRsJ_LvypP_0ykIVyPEUZp=s180-rw" class="rounded float-left" alt="..."><br>
+    <img src="https://play-lh.googleusercontent.com/akv2Bdp7i5Vv-sl9FuP3_dhWpUO80zULf-Pkh6RFleomEp6pZorHuCNm3FbR9oAMunVK=s180-rw" class="rounded float-right" alt="...">
+    <img src="https://play-lh.googleusercontent.com/4FI2YJ1IvEa5QhxGXf57PfmUu-vlkd4LdQbpBHwhUbNobktTfWHfN4Cf6lrgEt3NR0o=s180-rw" class="rounded float-center">
+           </div>
+         </div><br><br>
+       <div class="row text-center text-white">
+           <div class="col-sm">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Klik Disini
+        </button><br><br>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Pembelian</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            <form action="/pembayaran" method="POST">
+            <h3>
+            <input type="text" name="inputgame" placeholder="Game" class="dropdown"><br>
+            <input type="text" name="inputidml" placeholder="Id Game"><br>
+            <input type="text" name="inputdiamond" placeholder="Berapa Diamond"><br>
+            <input type="date" name="inputtanggaltransaksi" placeholder="Tanggal Transaksi"><br>
+            <input type="text" name="inputnegara" placeholder="Negara"><br>
+            <input type="text" name="inputvia" placeholder="Via"><br><br>
+            </h3>
+            <button type="submit " class="btn-primary btn-lg">BAYAR</button>
+            </form>
+            </div>
+            </div>
+        </div>
+        </div> <br>
+           <h1>INPUT PEMBAYARAN</h1><br>
+     <table border="3" align='center' class="table text-white">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Game</th>
+                <th>Id Game</th>
+                <th>Diamond</th>
+                <th>Tanggal Transaksi</th>
+                <th>Negara</th>
+                <th>Via</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each data4}}
+            <tr>
+                <td>{{ nomor_pelanggan }}</td>
+                <td>{{ game }}</td>
+                <td>{{ id_ml }}</td>
+                <td>{{ diamond }}</td>
+                <td>{{ tanggal_transaksi }}</td>
+                <td>{{ negara }}</td>
+                <td>{{ via }}</td>
+                <td><a href="/hapus/{{ nomor_pelanggan }}"><button class="btn-primary">DELETE</button></a></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+             </div>
+       </div>
+    </div>
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+</html>
